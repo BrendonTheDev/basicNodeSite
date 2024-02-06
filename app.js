@@ -1,24 +1,9 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express");
 
-const server = http.createServer((req, res) => {
-  console.log("request made");
+const app = express();
 
-  //set header content type
-  res.setHeader("Content-Type", "text/html");
+// Listen For Requests
+app.listen(3000);
 
-  // send an html file
-  fs.readFile("./views/index.html", (err, data) => {
-    if (err) {
-      console.log(err);
-      res.end();
-    } else {
-      res.write(data);
-      res.end();
-    }
-  });
-});
-
-server.listen(3000, "localhost", () => {
-  console.log("listen");
-});
+//register view engine
+app.set("view engine", "ejs");
