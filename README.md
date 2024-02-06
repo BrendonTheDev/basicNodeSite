@@ -1,6 +1,4 @@
-# basicNodeSite
-
-basicNodeSite
+# Basic Node Site
 
 # Project Goal
 
